@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghanaian National Parks</title>
+    <style>
+        /* Add your CSS styles here */
+        .park-info {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .park-info h2 {
+            margin-top: 0;
+        }
+
+        .details-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .details-list li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ghanaian National Parks</h1>
+    <div id="park-list"></div>
+
+    <script>
+        // Your JavaScript code goes here
+        class Park {
+            constructor(name, location) {
+                this.name = name;
+                this.location = location;
+                this.accommodations = [];
+                this.trails = [];
+                this.adventures = [];
+            }
+
+            addAccommodation(type, price) {
+                this.accommodations.push({ type, price });
+            }
+
+            addTrail(name, difficulty, length, highlights) {
+                this.trails.push({ name, difficulty, length, highlights });
+            }
+
+            addAdventure(name, price, description) {
+                this.adventures.push({ name, price, description });
+            }
+        }
+
+        const molePark = new Park("Mole National Park", "Northern Region, Ghana");
+        molePark.addAccommodation("Lodges", "GHS 200 - GHS 500 per night");
+        molePark.addAccommodation("Camping", "GHS 50 - GHS 100 per night");
+        molePark.addTrail("Mole Elephant Safari", "Easy", "2-3 hours", "Spot elephants and other wildlife");
+        molePark.addTrail("Zaina Canopy Walkway", "Moderate", "1.1 km", "Walk through the treetops for aerial views");
+        molePark.addAdventure("Night Safari", "GHS 100 - GHS 200 per person", "Guided night tour to observe nocturnal animals");
+        molePark.addAdventure("Bird Watching Tour", "GHS 50 - GHS 150 per person", "Explore diverse bird species habitats");
+
+        const kakumPark = new Park("Kakum National Park", "Central Region, Ghana");
+        kakumPark.addAccommodation("Eco-Lodges", "GHS 150 - GHS 300 per night");
+        kakumPark.addAccommodation("Camping", "GHS 30 - GHS 80 per night");
+        kakumPark.addTrail("Canopy Walkway", "Moderate", "350 meters", "Walk high above the forest floor on suspended bridges");
+        kakumPark.addTrail("Nature Trails", "Easy to Moderate", "Varies", "Explore the rainforest with guided tours");
+        kakumPark.addAdventure("Bushcraft Experience", "GHS 80 - GHS 200 per person", "Learn survival skills from local guides");
+        kakumPark.addAdventure("Zip-line Tour", "GHS 120 - GHS 250 per person", "Fly through the forest canopy on thrilling zip lines");
+
+        const parks = [molePark, kakumPark];
+
+        const parkList = document.getElementById('park-list');
+
+        parks.forEach(park => {
+            const parkInfo = document.createElement('div');
+            parkInfo.classList.add('park-info');
+            parkInfo.innerHTML = `
+                <h2>${park.name}</h2>
+                <p><strong>Location:</strong> ${park.location}</p>
+                <h3>Accommodations:</h3>
+                <ul class="details-list">
+                    ${park.accommodations.map(accommodation => `<li>${accommodation.type}: ${accommodation.price}</li>`).join('')}
+                </ul>
+                <h3>Trails:</h3>
+                <ul class="details-list">
+                    ${park.trails.map(trail => `<li>${trail.name} - Difficulty: ${trail.difficulty}, Length: ${trail.length}, Highlights: ${trail.highlights}</li>`).join('')}
+                </ul>
+                <h3>Adventures:</h3>
+                <ul class="details-list">
+                    ${park.adventures.map(adventure => `<li>${adventure.name} - Price: ${adventure.price}, Description: ${adventure.description}</li>`).join('')}
+                </ul>
+            `;
+            parkList.appendChild(parkInfo);
+        });
+    </script>
+</body>
+</html>
