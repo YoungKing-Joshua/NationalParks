@@ -1,100 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghanaian National Parks</title>
-    <style>
-        /* Add your CSS styles here */
-        .park-info {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ghana National Parks</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				<h1>GhanaParks</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="#">Park Details</a></li>
+					<li><a href="#">Trails</a></li>
+					<li><a href="#">Adventure</a></li>
+				</ul>
+			</nav>
+			<div class="auth-buttons">
+				<button class="explore">Explore</button>
+				<button class="login">Login</button>
+			</div>
+		</header>
 
-        .park-info h2 {
-            margin-top: 0;
-        }
+		<main>
+			<section class="hero">
+				<div class="hero-text">
+					<h2>Discover Ghana's National Parks</h2>
+					<p>Explore unique park experiences in Ghana!</p>
+				</div>
+				<div class="search-container">
+					<div class="search-box">
+						<input type="text" placeholder="Select Destination" />
+						<input type="date" placeholder="Choose Arrival" />
+						<input type="date" placeholder="Choose Departure" />
+						<input type="number" placeholder="Select Guests" />
+						<button class="search-button">Search</button>
+					</div>
+				</div>
+			</section>
 
-        .details-list {
-            list-style-type: none;
-            padding: 0;
-        }
+			<section class="top-parks">
+				<h3>Top Parks in Ghana</h3>
+				<div class="park-cards">
+					<div class="park-card">
+						<img src="assets/hills.jpg" alt="Mole" />
+						<p>Mole</p>
+					</div>
+					<div class="park-card">
+						<img src="assets/kakum1.jpg" alt="Kakum" />
+						<p>Kakum</p>
+					</div>
+					<div class="park-card">
+						<img src="assets/elephant.jpg" alt="Shai Hills" />
+						<p>Shai Hills</p>
+					</div>
+					<div class="park-card">
+						<img src="assets/digyw.jpg" alt="Digya" />
+						<p>Digya</p>
+					</div>
+					<div class="park-card">
+						<img src="assets/buii.jpg" alt="Bia" />
+						<p>Bia</p>
+					</div>
+					<div class="park-card">
+						<img src="assets/biu.jpg" alt="Bui" />
+						<p>Bui</p>
+					</div>
+				</div>
+			</section>
 
-        .details-list li {
-            margin-bottom: 5px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Ghanaian National Parks</h1>
-    <div id="park-list"></div>
+			<section class="recommended-accommodations">
+				<h3>Recommended Accommodations</h3>
+				<div class="accommodation-cards">
+					<div class="accommodation-card">
+						<img src="assets/1.jpg" alt="Safari Lodge" />
+						<p>Safari Lodge<br />from $120/night</p>
+					</div>
+					<div class="accommodation-card">
+						<img src="assets/2.jpg" alt="Canopy Cabin" />
+						<p>Canopy Cabin<br />from $150/night</p>
+					</div>
+					<div class="accommodation-card">
+						<img src="assets/3.jpg" alt="Riverfront Tent" />
+						<p>Riverfront Tent<br />from $180/night</p>
+					</div>
+					<div class="accommodation-card">
+						<img src="assets/4.jpg" alt="Forest Chalet" />
+						<p>Forest Chalet<br />from $130/night</p>
+					</div>
+					<div class="accommodation-card">
+						<img src="assets/5.jpg" alt="Lakefront Cottage" />
+						<p>Lakefront Cottage<br />from $70/night</p>
+					</div>
+				</div>
+			</section>
 
-    <script>
-        // Your JavaScript code goes here
-        class Park {
-            constructor(name, location) {
-                this.name = name;
-                this.location = location;
-                this.accommodations = [];
-                this.trails = [];
-                this.adventures = [];
-            }
+			<section class="special-offers">
+				<h3>Special Offers Available!</h3>
+				<button class="join-now">Join Now</button>
+			</section>
+		</main>
 
-            addAccommodation(type, price) {
-                this.accommodations.push({ type, price });
-            }
-
-            addTrail(name, difficulty, length, highlights) {
-                this.trails.push({ name, difficulty, length, highlights });
-            }
-
-            addAdventure(name, price, description) {
-                this.adventures.push({ name, price, description });
-            }
-        }
-
-        const molePark = new Park("Mole National Park", "Northern Region, Ghana");
-        molePark.addAccommodation("Lodges", "GHS 200 - GHS 500 per night");
-        molePark.addAccommodation("Camping", "GHS 50 - GHS 100 per night");
-        molePark.addTrail("Mole Elephant Safari", "Easy", "2-3 hours", "Spot elephants and other wildlife");
-        molePark.addTrail("Zaina Canopy Walkway", "Moderate", "1.1 km", "Walk through the treetops for aerial views");
-        molePark.addAdventure("Night Safari", "GHS 100 - GHS 200 per person", "Guided night tour to observe nocturnal animals");
-        molePark.addAdventure("Bird Watching Tour", "GHS 50 - GHS 150 per person", "Explore diverse bird species habitats");
-
-        const kakumPark = new Park("Kakum National Park", "Central Region, Ghana");
-        kakumPark.addAccommodation("Eco-Lodges", "GHS 150 - GHS 300 per night");
-        kakumPark.addAccommodation("Camping", "GHS 30 - GHS 80 per night");
-        kakumPark.addTrail("Canopy Walkway", "Moderate", "350 meters", "Walk high above the forest floor on suspended bridges");
-        kakumPark.addTrail("Nature Trails", "Easy to Moderate", "Varies", "Explore the rainforest with guided tours");
-        kakumPark.addAdventure("Bushcraft Experience", "GHS 80 - GHS 200 per person", "Learn survival skills from local guides");
-        kakumPark.addAdventure("Zip-line Tour", "GHS 120 - GHS 250 per person", "Fly through the forest canopy on thrilling zip lines");
-
-        const parks = [molePark, kakumPark];
-
-        const parkList = document.getElementById('park-list');
-
-        parks.forEach(park => {
-            const parkInfo = document.createElement('div');
-            parkInfo.classList.add('park-info');
-            parkInfo.innerHTML = `
-                <h2>${park.name}</h2>
-                <p><strong>Location:</strong> ${park.location}</p>
-                <h3>Accommodations:</h3>
-                <ul class="details-list">
-                    ${park.accommodations.map(accommodation => `<li>${accommodation.type}: ${accommodation.price}</li>`).join('')}
-                </ul>
-                <h3>Trails:</h3>
-                <ul class="details-list">
-                    ${park.trails.map(trail => `<li>${trail.name} - Difficulty: ${trail.difficulty}, Length: ${trail.length}, Highlights: ${trail.highlights}</li>`).join('')}
-                </ul>
-                <h3>Adventures:</h3>
-                <ul class="details-list">
-                    ${park.adventures.map(adventure => `<li>${adventure.name} - Price: ${adventure.price}, Description: ${adventure.description}</li>`).join('')}
-                </ul>
-            `;
-            parkList.appendChild(parkInfo);
-        });
-    </script>
-</body>
+		<footer>
+			<div class="footer-content">
+				<p>GhanaParksExplorer</p>
+				<p>Your go-to for Ghana's parks since 1997!</p>
+			</div>
+			<div class="footer-links">
+				<a href="#">Help Center</a>
+				<a href="#">FAQs</a>
+				<a href="#">Support Services</a>
+				<a href="#">User Manual</a>
+				<a href="#">Contact Support</a>
+			</div>
+		</footer>
+	</body>
 </html>
