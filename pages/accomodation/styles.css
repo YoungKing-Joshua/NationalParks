@@ -50,11 +50,12 @@ header nav ul li a {
 
 /* Section Title Background */
 .section-title-container {
-	background: url("assets/mole_motel_bg.jpg") no-repeat center center/cover;
+	background: url("mole.jpg") no-repeat center center/cover;
 	padding: 60px 20px;
 	text-align: center;
 	position: relative;
 	color: white;
+	height: 100px;
 }
 
 .section-title {
