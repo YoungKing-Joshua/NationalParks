@@ -1,0 +1,190 @@
+/* General Styling */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Header */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+
+header .logo h1 {
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+header nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+header nav ul li {
+	margin-left: 20px;
+}
+
+header nav ul li a {
+	text-decoration: none;
+	color: black;
+	font-size: 1em;
+}
+
+/* Hero Section */
+.hero {
+	position: relative;
+	text-align: center;
+	color: white;
+	background: url("assets/hero-image.jpg") no-repeat center center/cover;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero-text {
+	background: rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	border-radius: 10px;
+}
+
+.hero h2 {
+	margin: 0;
+	font-size: 2em;
+}
+
+.hero p {
+	margin-top: 10px;
+	font-size: 1.2em;
+}
+
+/* Parks Listing Section */
+.parks-listing {
+	padding: 50px;
+	text-align: center;
+}
+
+/* Section Title Container */
+.section-title-container {
+	position: relative;
+	margin-bottom: 30px; /* Add space below the title */
+	display: flex;
+	align-items: center; /* Vertically center */
+	justify-content: center; /* Horizontally center */
+	height: 200px; /* Set height as needed */
+	overflow: hidden; /* Prevent content overflow */
+}
+
+/* Background Image for Section Title */
+.section-title-container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url("../assets/elephant.jpg") no-repeat center center / cover; /* Replace with your image */
+	opacity: 0.3; /* Adjust opacity for visibility */
+	z-index: -1; /* Send the image behind the text */
+}
+
+/* Section Title Styling */
+.section-title {
+	font-size: 2.5em; /* Increase font size for prominence */
+	color: #fff; /* Change text color for contrast */
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add a subtle shadow for readability */
+	text-align: center; /* Center the text */
+	padding: 0 15px; /* Optional: Add padding for better spacing */
+	z-index: 1; /* Ensure text stays above the background image */
+}
+
+/* Region Titles */
+.region-title {
+	font-size: 1.8em;
+	color: #333;
+	margin: 40px 0 20px; /* Add some spacing around region titles */
+	text-align: left; /* Align text to the left */
+	padding-left: 10px; /* Optional: Add some left padding for better spacing */
+}
+
+/* Park Cards */
+.park-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 20px;
+	padding: 0 10px;
+}
+
+.park-card {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: transform 0.3s;
+	background-color: #fff;
+	text-align: left;
+	text-decoration: none; /* Remove underline for links */
+}
+
+.park-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 8px 8px 0 0;
+}
+
+.park-info {
+	padding: 15px;
+}
+
+.park-info h3 {
+	margin: 0;
+	font-size: 1.5em;
+	color: #333;
+}
+
+.park-info p {
+	margin-top: 8px;
+	font-size: 1em;
+	color: #555;
+}
+
+.park-card:hover {
+	transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+	background-color: #f4f4f4;
+	padding: 20px;
+	text-align: center;
+}
+
+.footer-content p {
+	margin: 0;
+}
+
+.footer-links {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 10px;
+}
+
+.footer-links a {
+	text-decoration: none;
+	color: #007bff;
+}
